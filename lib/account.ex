@@ -12,7 +12,7 @@ defmodule FinancialSystem.Account do
   @doc """
     Creates a new Account struct.
   """
-  @spec new(integer, Money) :: FinancialSystem.Account
+  @spec new(integer, [Money]) :: FinancialSystem.Account
   def new(id, money) do
     %FinancialSystem.Account{id: id, money: money}
   end

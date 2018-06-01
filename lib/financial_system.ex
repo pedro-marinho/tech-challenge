@@ -60,9 +60,9 @@ defmodule FinancialSystem do
   @spec multiply(Money, number) :: Money
   def multiply(amount, rate) do
     if amount.frac * rate >= 100 do
-      %Money{int: Kernel.trunc(amount.int * rate + 1), frac: Kernel.trunc(amount.frac * rate - 100), currency: amount.currency}
+      %Money{int: Kernel.trunc(amount.int * rate + 1), frac: Kernel.trunc(Kernel.trunc(amount.frac * rate - 100) + (amount.int * rate - Kernel.trunc(amount.int * rate))*100), currency: amount.currency}
     else
-      %Money{int: Kernel.trunc(amount.int * rate), frac: Kernel.trunc(amount.frac * rate), currency: amount.currency}
+      %Money{int: Kernel.trunc(amount.int * rate), frac: Kernel.trunc(Kernel.trunc(amount.frac * rate) + (amount.int * rate - Kernel.trunc(amount.int * rate))*100), currency: amount.currency}
     end
   end
 
