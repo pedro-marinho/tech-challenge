@@ -11,6 +11,11 @@ defmodule FinancialSystem.Money do
 
   @doc """
     Creates a new Money struct.
+
+    ### Parameters:
+      - int: The integer part of the amount.
+      - frac: The fractional part of the amount.
+      - currency: The currency of the amount. Must be in compliance with ISO 4217
   """
   @spec new!(integer, integer, :atom) :: FinancialSystem.Money :: no_return
   def new!(int, frac, currency) do

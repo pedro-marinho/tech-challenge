@@ -8,6 +8,10 @@ defmodule FinancialSystem do
 
   @doc """
     Adds an amount of money to an account.
+
+    ### Parameters:
+      - account: The account that will receive de amount.
+      - amount: The amount.
   """
   @spec add!(Account, Money) :: Account :: no_return
   def add!(account, amount) do
@@ -32,6 +36,10 @@ defmodule FinancialSystem do
 
   @doc """
     Subtracts an amount of an account.
+
+    ### Parameters:
+      - account: The account that will lose the money.
+      - amount: The amount.
   """
   @spec sub!(Account, Money) :: Account :: no_return
   def sub!(account, amount) do
@@ -56,6 +64,10 @@ defmodule FinancialSystem do
 
   @doc """
     Multiplies a amount of money by a rate.
+
+    ### Parameters:
+      - amount: The amount.
+      - rate: The rate that will be used in the multiplication.
   """
   @spec multiply(Money, number) :: Money
   def multiply(amount, rate) do
@@ -68,6 +80,12 @@ defmodule FinancialSystem do
 
   @doc """
     Exchanges money of a currency to another currency.
+
+    ### Parameters:
+      - account: The account that will perform the exchange operation.
+      - amount: The amount of money of the original currency that will be exchanged.
+      - currency: The currency that will be transferred to.
+      - rate: The exchange rate.
   """
   @spec exchange!(Account, Money, :atom, number) :: Account :: no_return
   def exchange!(account, amount, currency, rate) do
@@ -87,6 +105,9 @@ defmodule FinancialSystem do
 
   @doc """
     Performs a transaction.
+
+    ### Parameters:
+      - transaction: The transaction.
   """
   @spec transfer!(Transaction) :: %{source: Account, destinations: [Account]}
   def transfer!(transaction) do

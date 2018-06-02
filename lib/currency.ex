@@ -5,6 +5,9 @@ defmodule FinancialSystem.Currency do
 
   @doc """
     Splits a file by new line.
+
+    ### Parameters:
+      - file: The path of the file to be parsed.
   """
   @spec parse_file(String.t()) :: [:atom]
   def parse_file(file) do
@@ -15,7 +18,10 @@ defmodule FinancialSystem.Currency do
   end
 
   @doc """
-    Tests if a currency is valid.
+    Tests if a currency is valid, i.e., in compliance with ISO 4217.
+
+    ### Parameters:
+      - currency: Atom that represents the currency
   """
   @spec valid_currency(:atom) :: boolean
   def valid_currency(currency) do

@@ -11,6 +11,10 @@ defmodule FinancialSystem.Account do
 
   @doc """
     Creates a new Account struct.
+
+    ### Parameters:
+      - integer: An identification number for the account.
+      - money: A list of Money structs where each of them represents a balance of one currency.
   """
   @spec new(integer, [Money]) :: FinancialSystem.Account
   def new(id, money) do
@@ -19,6 +23,10 @@ defmodule FinancialSystem.Account do
 
   @doc """
     Determines wheter a Account has enough balance to the operation or not.
+
+    ### Parameters:
+      - account: The account to be tested.
+      - amount: The amount of money wanted.
   """
   @spec enough_balance(FinancialSystem.Account, Money) :: boolean
   def enough_balance(account, amount) do
@@ -41,7 +49,11 @@ defmodule FinancialSystem.Account do
   end
 
   @doc """
-    Determines wheter a Account has enough balance to the operation or not.
+    Checks the balance of one specific currency.
+
+    ### Parameters:
+      - account: The account.
+      - currency: The currency to be tested.
   """
   @spec check_for_currency(FinancialSystem.Account, :atom) :: Money | nil
   def check_for_currency(account, currency) do
@@ -52,6 +64,10 @@ defmodule FinancialSystem.Account do
 
   @doc """
     Create a Money struct for a specific currency if this currency is not in the original list.
+
+    ### Parameters:
+      - account: The account where the balance of this currency will be created.
+      - amount: The currency.
   """
   @spec create_currency(FinancialSystem.Account, :atom) :: FinancialSystem.Account
   def create_currency(account, currency) do

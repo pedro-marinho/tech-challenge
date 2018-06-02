@@ -15,6 +15,11 @@ defmodule FinancialSystem.Transaction do
 
   @doc """
     Creates a new Transaction struct.
+
+    ### Parameters:
+      - source: The account that is transferring the money.
+      - amount: The amount of money that will be transferred.
+      - destinations: A list of maps with the property account and the property percentage.
   """
   @spec new(Account, Money, [%{:account => Account, :percentage => number}]) :: FinancialSystem.Transaction
   def new(source, amount, destinations) do
@@ -23,6 +28,9 @@ defmodule FinancialSystem.Transaction do
 
   @doc """
     Checks if the sum of each percentage is 1, otherwise raises an exception.
+
+    ### Parameters:
+      - transaction: The transaction struct.
   """
   @spec check_total_percentage!(FinancialSystem.Transaction) :: boolean :: no_return
   def check_total_percentage!(transaction) do
