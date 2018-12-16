@@ -1,0 +1,1 @@
+# t1 = FinancialSystem.Transaction.new(FinancialSystem.Account.new(1,[FinancialSystem.Money.new!(100,0,:USD)]), FinancialSystem.Money.new!(50,0,:USD), [%{:account => FinancialSystem.Account.new(1,[FinancialSystem.Money.new!(100,0,:USD)]), :percentage => 0.5}, %{:account => FinancialSystem.Account.new(1,[FinancialSystem.Money.new!(100,0,:USD)]), :percentage => 0.5}])
